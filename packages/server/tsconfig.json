@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "lib": ["es7"],
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "outDir": "build",
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@common/*": ["../../common/*"]
+    }
+  },
+  "ts-node": {
+    "files": true
+  },
+  "include": ["./src/**/*", "../common/**/*"],
+  "exclude": ["node_modules", "build"]
+}

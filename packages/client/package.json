@@ -1,0 +1,62 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.14",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "start:headless": "BROWSER=none npm start",
+    "build": "node scripts/build.js",
+    "clean": "rimraf ./build",
+    "test": "node scripts/test.js",
+    "tsc": "tsc --project ./tsconfig.json"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "0.0.16",
+    "@rescripts/rescript-use-babel-config": "0.0.12",
+    "@types/styled-components": "^5.1.21",
+    "cross-fetch": "^3.1.5",
+    "css-loader": "^6.6.0",
+    "file-loader": "6.2.0",
+    "fs-extra": "10.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "raw-loader": "4.0.2",
+    "rimraf": "3.0.2",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
