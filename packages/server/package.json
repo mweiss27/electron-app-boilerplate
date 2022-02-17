@@ -6,7 +6,7 @@
   "scripts": {
     "wait:electron": "wait-on tcp:54983",
     "watch": "nodemon src/main.ts",
-    "dev": "npm-run-all wait:electron watch",
+    "dev": "npm run watch",
     "tsc": "tsc --project ./tsconfig.json"
   },
   "keywords": [],

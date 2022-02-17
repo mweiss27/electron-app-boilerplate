@@ -9,7 +9,7 @@
     "start:electron": "npm start --prefix ./packages/electron",
     "start": "run-p start:client start:electron start:server"
   },
-  "keywords": [], 
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {

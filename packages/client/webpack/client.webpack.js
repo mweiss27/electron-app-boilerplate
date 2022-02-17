@@ -29,7 +29,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       chunks: ["main"],
       filename: join(outputDir, "index.html"),
-      title: "Finance Tracker",
+      title: "Electron Boilerplate",
       custom: ``,
       template: join(rootPath, "webpack", "./index-template.html"),
     }),
