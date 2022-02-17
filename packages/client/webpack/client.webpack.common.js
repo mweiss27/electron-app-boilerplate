@@ -4,10 +4,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { tsLoader, fileLoader, rawLoader, cssLoader, scssLoader } = require("./client.webpack.loaders")
 
 const rootPath = resolve(__dirname, "..")
-const outputDir = resolve(rootPath, "build")
 
-module.exports = {
-  mode: "development",
+module.exports = outputDir => ({
+  mode: "production",
   target: "electron-renderer",
   entry: resolve(rootPath, "src", "index.tsx"),
   output: {
@@ -34,11 +33,4 @@ module.exports = {
       template: join(rootPath, "webpack", "./index-template.html"),
     }),
   ],
-  devServer: {
-    static: {
-      directory: outputDir
-    },
-    port: 3000,
-    hot: true,
-  },
-}
+})

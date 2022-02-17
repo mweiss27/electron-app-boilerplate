@@ -4,15 +4,42 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "i": "lerna bootstrap",
+    "install": "lerna bootstrap",
     "start:client": "npm run start:headless --prefix ./packages/client",
     "start:server": "npm run dev --prefix ./packages/server",
     "start:electron": "npm start --prefix ./packages/electron",
-    "start": "run-p start:client start:electron start:server"
+    "start": "run-p start:client start:electron start:server",
+    "build:client": "npm run build --prefix ./packages/client",
+    "build:server": "npm run build --prefix ./packages/server",
+    "build:electron": "npm run build:production --prefix ./packages/electron",
+    "build": "run-p build:client build:server build:electron",
+    "clean": "shx rm -rf build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "copyfiles": "^2.4.1",
+    "lerna": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.4"
+  },
+  "build": {
+    "appId": "",
+    "directories": {
+      "app": "dist-production",
+      "output": "builds/${version}"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "logo.ico"
+    },
+    "mac": {
+      "icon": "logo.icns"
+    },
+    "dmg": {
+      "sign": false
+    }
   }
 }

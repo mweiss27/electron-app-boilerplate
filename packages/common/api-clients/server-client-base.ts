@@ -4,7 +4,7 @@ export abstract class ServerClientBase {
   private endpointBase: string
 
   constructor(endpointBase: string) {
-    this.endpointBase = endpointBase
+    this.endpointBase = endpointBase.startsWith("/") ? endpointBase : `/${endpointBase}`
   }
 
   protected generateUrl(endpoint: string): string {

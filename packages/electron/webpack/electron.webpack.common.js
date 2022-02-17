@@ -1,5 +1,4 @@
 const { resolve } = require("path")
-// const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 
 const rootPath = resolve(__dirname, "..")
 
@@ -28,16 +27,8 @@ module.exports = {
     },
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
   },
-  plugins: [
-    // new TsconfigPathsPlugin({
-    //   configFile: "./tsconfig.json",
-    // }),
-  ],
+  plugins: [],
   node: {
     __dirname: false,
-  },
-  output: {
-    path: resolve(rootPath, "build"),
-    filename: "[name].js",
   },
 }

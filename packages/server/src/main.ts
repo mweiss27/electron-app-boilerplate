@@ -1,3 +1,4 @@
+import { Ports } from "@common/api-clients"
 import { ValidationPipe } from "@nestjs/common"
 import { NestFactory } from "@nestjs/core"
 import { AppModule } from "./app-module"
@@ -14,7 +15,7 @@ async function bootstrap() {
     },
     credentials: true,
   })
-  await app.listen(8080)
+  await app.listen(Ports.Server)
 }
 
 bootstrap()

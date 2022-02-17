@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "build": "nest build && node scripts/copyfiles.js && npm i --prefix ../../build/server",
     "wait:electron": "wait-on tcp:54983",
     "watch": "nodemon src/main.ts",
     "dev": "npm run watch",
@@ -20,7 +21,7 @@
     "class-validator": "^0.13.2",
     "lodash": "^4.17.21",
     "rc": "1.2.8",
-    "sqlite3": "5.0.2",
+    "better-sqlite3": "^7.5.0",
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
