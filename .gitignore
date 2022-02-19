@@ -28,3 +28,5 @@ yarn-error.log*
 .eslintcache
 .*rc
 electron-boilerplate-config.json
+
+packages\server\src\electron-boilerplate-config.json
