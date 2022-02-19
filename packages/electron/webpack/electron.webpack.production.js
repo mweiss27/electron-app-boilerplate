@@ -4,7 +4,7 @@ const common = require("./electron.webpack.common")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 const rootPath = resolve(__dirname, "..")
-const outputDir = resolve(rootPath, "..", "..", "build", "electron")
+const outputDir = resolve(rootPath, "..", "..", "build")
 
 module.exports = merge(common, {
   mode: "production",

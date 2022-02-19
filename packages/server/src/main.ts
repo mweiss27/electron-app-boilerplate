@@ -2,7 +2,9 @@ import { Ports } from "@common/api-clients"
 import { ValidationPipe } from "@nestjs/common"
 import { NestFactory } from "@nestjs/core"
 import { AppModule } from "./app-module"
+import { isDev } from "./util/environment"
 
+console.log(`NestJS server starting in ${isDev ? "development" : "production"} mode!`)
 const whitelistedOrigins = ["http://localhost:8080", "http://localhost:3000", "http://localhost:3001"]
 
 async function bootstrap() {

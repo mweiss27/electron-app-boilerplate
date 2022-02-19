@@ -46,6 +46,7 @@
     "@rescripts/cli": "0.0.16",
     "@rescripts/rescript-use-babel-config": "0.0.12",
     "@types/styled-components": "^5.1.21",
+    "@types/wait-on": "^5.3.1",
     "cross-fetch": "^3.1.5",
     "css-loader": "^6.6.0",
     "file-loader": "6.2.0",

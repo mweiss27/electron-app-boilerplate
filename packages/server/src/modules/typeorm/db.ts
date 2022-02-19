@@ -10,6 +10,4 @@ export const connectionOptions: BetterSqlite3ConnectionOptions = {
   logging: false,
 }
 
-console.log(`connection options: `, connectionOptions)
-
 export const createDbConnection = (): Promise<Connection> => createConnection(connectionOptions)

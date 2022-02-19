@@ -1,1 +1,1 @@
-export type Environment = "local" | "development" | "production"
+export type Environment = "development" | "production"

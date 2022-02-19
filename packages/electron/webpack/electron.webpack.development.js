@@ -7,7 +7,7 @@ const rootPath = resolve(__dirname, "..")
 module.exports = merge(common, {
   mode: "development",
   output: {
-    path: resolve(rootPath, "build", "development"),
+    path: resolve(rootPath, "build"),
     filename: "[name].js",
   },
 })

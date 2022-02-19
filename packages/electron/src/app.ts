@@ -1,9 +1,10 @@
 import { app, BrowserWindow } from "electron"
-// import isDev from "electron-is-dev"
+import isDev from "electron-is-dev"
 import { join } from "path"
+import { format } from "url"
 import { startElectronExpressServer } from "./api/electron-web"
 
-const isDev = false
+console.log(`Electron app starting in ${isDev ? "development" : "production"} mode.`)
 
 const createClientWindow = (): void => {
   const window = new BrowserWindow({
@@ -15,10 +16,19 @@ const createClientWindow = (): void => {
     },
   })
 
-  const prodIndexFile = `file://${join(__dirname, "../client/index.html")}`
-  console.log(`Loading prod index.html at: `, prodIndexFile)
+  const url = isDev
+    ? format({
+        protocol: "http:",
+        pathname: "localhost:3000",
+        slashes: true,
+      })
+    : format({
+        protocol: "file:",
+        pathname: join(__dirname, "client", "index.html"),
+        slashes: true,
+      })
 
-  window.loadURL(isDev ? "http://localhost:3000" : prodIndexFile)
+  window.loadURL(url)
 
   // if (isDev) {
   window.webContents.openDevTools({
@@ -37,10 +47,13 @@ const createServerWindow = (): void => {
     },
   })
 
-  const prodIndexFile = `file://${join(__dirname, "./index-nestjs.html")}`
-  console.log(`Loading prod NestJS index.html at: `, prodIndexFile)
+  const url = format({
+    protocol: "file:",
+    pathname: join(__dirname, "index-nestjs.html"),
+    slashes: true,
+  })
 
-  window.loadURL(prodIndexFile)
+  window.loadURL(url)
 
   window.webContents.openDevTools({
     mode: "detach",
@@ -50,9 +63,9 @@ const createServerWindow = (): void => {
 app.whenReady().then(() => {
   createClientWindow()
   startElectronExpressServer()
-  // if (!isDev) {
+  if (!isDev) {
     createServerWindow()
-  // }
+  }
 
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {

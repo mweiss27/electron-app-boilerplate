@@ -1,0 +1,20 @@
+{
+  "development": {
+    "NODE_ENV": "development",
+    "app": {
+      "name": "Electron App Boilerplate"
+    },
+    "db": {
+      "database": "/Users/matt/electron-boilerplate-dev.sqlite"
+    }
+  },
+  "production": {
+    "NODE_ENV": "production",
+    "app": {
+      "name": "Electron App Boilerplate"
+    },
+    "db": {
+      "database": "/Users/matt/electron-boilerplate-prod.sqlite"
+    }
+  }
+}

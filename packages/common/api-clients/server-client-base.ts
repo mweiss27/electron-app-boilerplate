@@ -11,6 +11,10 @@ export abstract class ServerClientBase {
     return `http://localhost:${Ports.Server}${this.endpointBase}${endpoint ?? ""}`
   }
 
+  protected getRaw(endpoint: string): Promise<string> {
+    return fetch(this.generateUrl(endpoint)).then(response => response.text())
+  }
+
   protected get<T>(endpoint: string): Promise<T> {
     return fetch(this.generateUrl(endpoint)).then(response => response.json())
   }

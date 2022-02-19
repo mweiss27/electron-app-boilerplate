@@ -5,7 +5,8 @@
   </head>
   <body>
     <script>
-      require("../server/server/src/main.js")
+      process.env.ELECTRON_IS_DEV = 0
+      require("./server/server/src/main.js")
     </script>
   </body>
 </html>

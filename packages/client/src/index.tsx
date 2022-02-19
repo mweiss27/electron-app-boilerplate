@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import { createGlobalStyle } from "styled-components"
 import { App } from "./app"
 import { AppProviders } from "./app-providers"
+import { WaitForServers } from "./wait-for-servers"
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -17,7 +18,9 @@ ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
     <AppProviders>
-      <App />
+      <WaitForServers>
+        <App />
+      </WaitForServers>
     </AppProviders>
   </React.StrictMode>,
   document.getElementById("root")

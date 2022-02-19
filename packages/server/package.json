@@ -4,10 +4,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "nest build && node scripts/copyfiles.js && npm i --prefix ../../build/server",
+    "build": "nest build && node scripts/copyfiles.js",
     "wait:electron": "wait-on tcp:54983",
     "watch": "nodemon src/main.ts",
-    "dev": "npm run watch",
+    "dev": "run-s wait:electron watch",
     "tsc": "tsc --project ./tsconfig.json"
   },
   "keywords": [],
@@ -17,15 +17,18 @@
     "@nestjs/common": "^8.2.6",
     "@nestjs/core": "^8.2.6",
     "@nestjs/platform-express": "^8.2.6",
+    "better-sqlite3": "^7.5.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "lodash": "^4.17.21",
     "rc": "1.2.8",
-    "better-sqlite3": "^7.5.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.4",
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.178",
+    "electron-rebuild": "^3.2.7",
     "@types/rc": "^1.2.0",
     "cross-fetch": "^3.1.5",
     "fs-extra": "10.0.0",

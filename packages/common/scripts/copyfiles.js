@@ -1,6 +1,6 @@
 const copyfiles = require("copyfiles")
 
-const buildDir = "../../build"
+const buildDir = "../../build/server/common"
 
 const filesToCopy = ["package.json"]
 

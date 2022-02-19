@@ -12,7 +12,7 @@ export class PingClient extends ServerClientBase implements IPingClient {
   }
 
   public async ping(): Promise<string> {
-    const response = await this.get<string>(Routes.Index)
+    const response = await this.getRaw(Routes.Index)
 
     return response
   }
